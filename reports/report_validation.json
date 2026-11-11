@@ -1,0 +1,113 @@
+{
+  "validation_summary": {
+    "total_checks": 13,
+    "passed_checks": 13,
+    "failed_checks": 0,
+    "pass_rate": 1.0
+  },
+  "validation_details": [
+    {
+      "check_name": "销售额变化校验",
+      "passed": true,
+      "expected": -18802.24,
+      "actual": -18802.24,
+      "message": "本月销售额减去上月销售额"
+    },
+    {
+      "check_name": "销售增长率校验",
+      "passed": true,
+      "expected": -0.034917,
+      "actual": -0.034917,
+      "message": "销售额环比增长率"
+    },
+    {
+      "check_name": "毛利额变化校验",
+      "passed": true,
+      "expected": -11046.28,
+      "actual": -11046.28,
+      "message": "本月毛利额减去上月毛利额"
+    },
+    {
+      "check_name": "毛利率变化校验",
+      "passed": true,
+      "expected": -0.7533,
+      "actual": -0.7533,
+      "message": "毛利率变化，单位为百分点"
+    },
+    {
+      "check_name": "客户明细销售变化校验",
+      "passed": true,
+      "expected": "所有客户计算一致",
+      "actual": 0,
+      "message": "本月销售额减去上月销售额"
+    },
+    {
+      "check_name": "Top 5下降客户名单校验",
+      "passed": true,
+      "expected": [
+        "C0338",
+        "C0378",
+        "C0466",
+        "C0402",
+        "C0242"
+      ],
+      "actual": [
+        "C0338",
+        "C0378",
+        "C0466",
+        "C0402",
+        "C0242"
+      ],
+      "message": "比较独立明细与AI输入中的客户名单"
+    },
+    {
+      "check_name": "Top 5下降客户金额校验",
+      "passed": true,
+      "expected": -36735.33,
+      "actual": -36735.33,
+      "message": "分别从独立明细和AI输入中计算Top 5下降金额"
+    },
+    {
+      "check_name": "Top 5逐客户金额校验",
+      "passed": true,
+      "expected": "每个客户金额一致",
+      "actual": "全部一致",
+      "message": "检查每个客户的销售额变化"
+    },
+    {
+      "check_name": "产品毛利率归因加总",
+      "passed": true,
+      "expected": -0.7533,
+      "actual": -0.7533,
+      "message": "产品结构效应 + 产品自身毛利率效应"
+    },
+    {
+      "check_name": "产品归因与整体毛利率变化",
+      "passed": true,
+      "expected": -0.7533,
+      "actual": -0.7533,
+      "message": "检查产品归因结果与整体毛利率变化是否一致"
+    },
+    {
+      "check_name": "客户数据勾稽",
+      "passed": true,
+      "expected": true,
+      "actual": true,
+      "message": "客户数据勾稽是否通过"
+    },
+    {
+      "check_name": "异常数量非负",
+      "passed": true,
+      "expected": "大于等于0",
+      "actual": 48,
+      "message": "异常记录数量不能为负数"
+    },
+    {
+      "check_name": "诊断发现数量口径",
+      "passed": true,
+      "expected": false,
+      "actual": false,
+      "message": "不能将诊断发现条数直接当作独立经营问题数量"
+    }
+  ]
+}

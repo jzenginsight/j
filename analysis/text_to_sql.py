@@ -315,10 +315,7 @@ def analyze_result(question, result):
     print("\nSQL 查询执行成功！")
     print("\nAI 正在分析经营数据...")
 
-    analysis = analyze_result(
-        question,
-        result
-    )git --version
+
 
     print("\n========== AI 经营分析 ==========\n")
     print(analysis)

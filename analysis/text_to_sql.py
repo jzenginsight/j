@@ -7,7 +7,7 @@ import duckdb
 from dotenv import load_dotenv
 from openai import OpenAI
 
-
+import streamlit as st
 # ==========================================
 # 1. 项目路径与 API 配置
 # ==========================================
@@ -21,8 +21,13 @@ load_dotenv(BASE_DIR / ".env")
 api_key = os.getenv("OPENROUTER_API_KEY")
 
 if not api_key:
-    raise ValueError("没有读取到 OPENROUTER_API_KEY，请检查项目根目录下的 .env 文件")
+    try:
+        api_key = st.secrets.get("OPENROUTER_API_KEY")
+    except Exception:
+        api_key = None
 
+if not api_key:
+    raise ValueError("没有读取到 OPENROUTER_API_KEY，请检查本地 .env 或 Streamlit Cloud Secrets")
 
 client = OpenAI(
     base_url="https://openrouter.ai/api/v1",
